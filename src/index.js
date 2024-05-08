@@ -23,8 +23,8 @@ app.engine(
     extname: '.hbs',
   }),
 );
-        app.set('view engine', 'hbs');
-        app.set('views', path.join(__dirname, 'resources/views'));
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'resources/views'));
 route(app);
 
 // đang start ra 1 cái port webserver
