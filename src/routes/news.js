@@ -1,11 +1,11 @@
-var express = require('express')
-var router = express.Router()
+var express = require('express');
+var router = express.Router();
 
-const newsController = require('../app/controllers/NewsController')
+const newsController = require('../app/controllers/NewsController');
 //đây là cho trang news
 // newsController.index
 // tuyến đường gốc phải ở dưới cùng
 
-router.use('/:slug', newsController.show)
-router.use('/', newsController.index)
+router.use('/:slug', newsController.show);
+router.use('/', newsController.index);
 module.exports = router;
