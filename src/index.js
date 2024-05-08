@@ -18,16 +18,16 @@ app.use(express.json());
 
 // Template engine
 app.engine(
-    'hbs',
-    handlebars({
-        extname: '.hbs',
-    }),
+  'hbs',
+  handlebars({
+    extname: '.hbs',
+  }),
 );
-app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname, 'resources/views'));
+        app.set('view engine', 'hbs');
+        app.set('views', path.join(__dirname, 'resources/views'));
 route(app);
 
 // đang start ra 1 cái port webserver
 app.listen(port, () => {
-    console.log(`Example app listening on port http://localhost:${port}`);
+  console.log(`Example app listening on port http://localhost:${port}`);
 });
