@@ -24,19 +24,12 @@
     "url": "https://github.com/luan0811/nodejs_blog_f8/issues"
   },
   "homepage": "https://github.com/luan0811/nodejs_blog_f8#readme",
-  "lint-staged": {
-    "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --tab-width 4"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "dependencies": {
     "express": "^4.19.2",
     "express-handlebars": "^5.1.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
+    "mongoose": "^8.3.4",
     "node-sass": "^9.0.0",
     "prettier": "^3.2.5"
   },

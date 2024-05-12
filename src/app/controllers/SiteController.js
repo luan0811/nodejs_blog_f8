@@ -1,7 +1,18 @@
+const Course = require('../models/Course');
+const { mutipleMongooseToObject } = require('../../util/mongoose');
+//dành cho các trang khác riêng lẻ
 class SiteController {
-    //GET /
-    index(req, res) {
-        res.render('home');
+    //sử dụng promise
+    //trang home
+    index(req, res, next) {
+        Course.find({})
+            .then((courses) => {
+                //khi dùng handlebar thì phải dùng cái này
+                res.render('home', {
+                    courses: mutipleMongooseToObject(courses),
+                });
+            })
+            .catch(next);
     }
 
     //[Get] /search

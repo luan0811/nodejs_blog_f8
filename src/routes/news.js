@@ -6,6 +6,6 @@ const newsController = require('../app/controllers/NewsController');
 // newsController.index
 // tuyến đường gốc phải ở dưới cùng
 
-router.use('/:slug', newsController.show);
-router.use('/', newsController.index);
+router.get('/:slug', newsController.show);
+router.get('/', newsController.index);
 module.exports = router;
