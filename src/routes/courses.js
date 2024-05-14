@@ -8,7 +8,8 @@ const courseController = require('../app/controllers/CourseController');
 //khi định nghỉa  tuyến đường phải định nghỉa thêm phương thức
 //sau đó vào controller để tạo
 
-
+router.get('/create', courseController.create);
+router.post('/store', courseController.store);
 router.get('/:slug', courseController.show);
-router.get('/:create', courseController.create);
+
 module.exports = router;

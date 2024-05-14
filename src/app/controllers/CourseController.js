@@ -9,13 +9,29 @@ class courseController {
         // res.send('Course detail - ' + req.params.slug);
         Course.findOne({ slug: req.params.slug })
             .then((course) => {
-                res.render('courses/show', { course: mongooseToObject(course) })
+                res.render('courses/show', {
+                    course: mongooseToObject(course),
+                });
             })
-            .catch(next)
+            .catch(next);
     }
-//[Get] /courses/create
+    //[Get] /courses/create
     create(req, res, next) {
-        res.render('courses/create')
+        res.render('courses/create');
+    }
+
+    //[Post] /courses/store
+    store(req, res, next) {
+        // res.json(req.body)
+        const formData = req.body;
+        formData.image = `https://i.ytimg.com/vi/${req.body.videoId}/sddefault.jpg`;
+        //tạo mới 1 course, bỏ formData vô trong, đó chính là req.body, những gì mình nhập
+        const course = new Course(formData);
+        //lưu xuống database
+        course
+            .save()
+            .then(() => res.redirect('/'))
+            .catch((error) => {});
     }
 }
 

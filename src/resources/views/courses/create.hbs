@@ -1,11 +1,23 @@
 <div class="mt-4">
-    <h3>Đăng khoá học</h3>
+  <h3>Đăng khoá học</h3>
 
-    <form>
-  <div class="form-group">
-    <label for="description">Mô tả</label>
-    <input type="email" class="form-control" id="description" name="description">
-  </div>
-  <button type="submit" class="btn btn-primary">Thêm khoá học</button>
-</form>
+  <form method="post" action="/courses/store">
+    <div class="form-group">
+      <label for="name">Tên khoá học</label>
+      <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="description">Mô tả</label>
+      <input type="text" class="form-control" id="description" name="description" required>
+    </div>
+    <div class="form-group">
+      <label for="videoId">Video ID</label>
+      <input type="text" class="form-control" id="videoId" name="videoId" required>
+    </div>
+    <div class="form-group">
+      <label for="level">Cấp độ</label>
+      <input type="text" class="form-control" id="level" name="level" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Thêm khoá học</button>
+  </form>
 </div>
