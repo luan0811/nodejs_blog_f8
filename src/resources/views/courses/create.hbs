@@ -1,14 +1,14 @@
 <div class="mt-4">
   <h3>Đăng khoá học</h3>
 
-  <form method="post" action="/courses/store">
+  <form class="mt-4" method="post" action="/courses/store">
     <div class="form-group">
       <label for="name">Tên khoá học</label>
       <input type="text" class="form-control" id="name" name="name" required>
     </div>
     <div class="form-group">
       <label for="description">Mô tả</label>
-      <input type="text" class="form-control" id="description" name="description" required>
+      <textarea type="text" class="form-control" id="description" name="description" required></textarea>
     </div>
     <div class="form-group">
       <label for="videoId">Video ID</label>

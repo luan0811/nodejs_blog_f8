@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+const siteRouter = require('./site');
 const courseController = require('../app/controllers/CourseController');
 //đây là cho trang news
 // newsController.index
@@ -10,6 +10,9 @@ const courseController = require('../app/controllers/CourseController');
 
 router.get('/create', courseController.create);
 router.post('/store', courseController.store);
+router.get('/:id/edit', courseController.edit);
+router.put('/:id', courseController.update);
+router.delete('/:id', courseController.delete);
 router.get('/:slug', courseController.show);
-
+router.use('/', siteRouter);
 module.exports = router;
